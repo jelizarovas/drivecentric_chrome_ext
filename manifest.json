@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "Phone Task",
+  "version": "0.1",
+  "description": "Adds a phone call task in drivecentric in a few hours",
+  "permissions": ["activeTab", "scripting"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {},
+  "icons": {
+    "128": "icon.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.drivecentric.com/*"],
+      "js": ["contentScript.js"]
+    }
+  ]
+}
